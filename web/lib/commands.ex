@@ -1,8 +1,9 @@
 defmodule Flambo.Commands do
   def valid do
-    [
-      [ ~r(hi), &hi/2 ]
-    ]
+    [ Flambo.Commands.Hi.key,
+      Flambo.Commands.WhoAreYou.key,
+      Flambo.Commands.Help.key,
+      Flambo.Commands.Gif.key ]
   end
 
   def find(payload) do
@@ -22,11 +23,7 @@ defmodule Flambo.Commands do
     [function, params]
   end
 
-  def hi(_message, user) do
-    "Why hello there #{user}!"
-  end
-
   def command_not_found(_message, user) do
-    "Sorry #{user}! I don't know how to do that."
+    %{ text: "Sorry #{user}! I don't know how to do that." }
   end
 end

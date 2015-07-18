@@ -11,8 +11,7 @@ defmodule Flambo.SlackController do
 
   def index(conn, params) do
     payload = params["text"] |> String.replace("#{params["trigger_word"]} ", "")
-    [ function | fn_params ] = Flambo.Commands.find(payload)
-    text = function.(fn_params, params["user_name"])
-    json conn, %{ text: text }
+    [ function | arguments ] = Flambo.Commands.find(payload)
+    json conn, function.(arguments, params["user_name"])
   end
 end
