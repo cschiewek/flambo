@@ -11,6 +11,7 @@ config :flambo, Flambo.Endpoint,
   root: Path.dirname(__DIR__),
   secret_key_base: "lgSslRwoeFpPVWNmrJWNvARP0xHluafPQZGtJ5v4VzH5EmYbxwNwiBtPhbMv4RmM",
   token: System.get_env("FLAMBO_TOKEN"),
+  giphy_key: "dc6zaTOxFJmzC",
   debug_errors: false,
   pubsub: [name: Flambo.PubSub,
            adapter: Phoenix.PubSub.PG2]
