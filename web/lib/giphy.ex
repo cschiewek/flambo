@@ -17,8 +17,8 @@ defmodule Flambo.Giphy do
   end
 
   def search(terms, offset \\ 0, limit \\ 1) do
-    query = "search?api_key=#{@key}&q=#{terms}&offset=#{offset}&limit=#{limit}"
-    get!(query).body[:data]
+    params = %{ api_key: @key, q: terms, offset: offset, limit: limit }
+    get!("search", [], params: params).body[:data]
   end
 
   defp process_url(url) do
