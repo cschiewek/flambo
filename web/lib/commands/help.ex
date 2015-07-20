@@ -7,9 +7,10 @@ defmodule Flambo.Commands.Help do
     %{ text:
       """
       ```
-      fbo gif            display a random gif 
+      fbo gif            display a random gif
       fbo help           prints this help message
       fbo hi             says hi
+      fbo tell           tell someone somethin
       fbo who are you?   tells you who he is
       ```
       """

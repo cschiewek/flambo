@@ -3,7 +3,8 @@ defmodule Flambo.Commands do
     [ Flambo.Commands.Hi.key,
       Flambo.Commands.WhoAreYou.key,
       Flambo.Commands.Help.key,
-      Flambo.Commands.Gif.key ]
+      Flambo.Commands.Gif.key,
+      Flambo.Commands.Tell.key ]
   end
 
   def find(payload) do
