@@ -4,7 +4,7 @@ defmodule Flambo.Commands.Gif do
   end
 
   def gif(message, _user) do
-    terms = message |> List.first |> String.replace(" ", "+")
+    terms = message |> List.first 
     %{ text: Flambo.Giphy.random(terms) }
   end
 end
