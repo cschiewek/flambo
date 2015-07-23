@@ -1,4 +1,4 @@
-defmodule Flambo.Giphy do
+defmodule Giphy do
   use HTTPoison.Base
   @key Application.get_env(:flambo, Flambo.Endpoint)[:giphy_key]
 

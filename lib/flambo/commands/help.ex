@@ -12,6 +12,7 @@ defmodule Flambo.Commands.Help do
       fbo hi             says hi
       fbo tell           tell someone somethin
       fbo who are you?   tells you who he is
+      fbo image          shows a random image
       ```
       """
     }
