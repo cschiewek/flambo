@@ -22,6 +22,7 @@ erl_crash.dump
 # variables.
 /config/prod.secret.exs
 /config/local.secret.exs
+/config/relisa.exs
 
 # ignore releases
 /rel
