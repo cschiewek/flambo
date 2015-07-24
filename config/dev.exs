@@ -33,3 +33,5 @@ config :flambo, Flambo.Repo,
   password: "postgres",
   database: "flambo_dev",
   size: 10 # The amount of database connections in the pool
+
+import_config "local.secret.exs"

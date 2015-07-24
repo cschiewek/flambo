@@ -18,3 +18,5 @@ config :flambo, Flambo.Repo,
   password: "postgres",
   database: "flambo_test",
   size: 1 # Use a single connection for transactional tests
+
+import_config "local.secret.exs"
