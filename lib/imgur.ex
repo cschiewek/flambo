@@ -1,7 +1,6 @@
-defmodule GoogleImage do
+defmodule Imgur do
   use HTTPoison.Base
-  @key Application.get_env(:flambo, Flambo.Endpoint)[:google_key]
-  @id Application.get_env(:flambo, Flambo.Endpoint)[:google_search_id]
+  @client_id Application.get_env(:flambo, Flambo.Endpoint)[:imgur_client_id]
 
   def random(terms) do
     results = search(terms)
@@ -9,6 +8,7 @@ defmodule GoogleImage do
       "Sorry, I couldn't find an image for `#{terms}`"
     else
       results
+      |> Enum.filter(fn(i) -> i["is_album"] == false end)
       |> Enum.shuffle
       |> List.first
       |> Map.get("link")
@@ -16,12 +16,12 @@ defmodule GoogleImage do
   end
 
   def search(terms) do
-    params = %{ q: terms, key: @key, searchType: "image", cx: @id }
-    get!("", [], [params: params, hackney: [ssl_options: [insecure: true]]]).body[:items]
+    header = [{"Authorization", "Client-ID #{@client_id}"}]
+    get!("search", header, params: %{ q_any: terms }).body[:data]
   end
 
   defp process_url(url) do
-    "https://www.googleapis.com/customsearch/v1/" <> url
+    "https://api.imgur.com/3/gallery/" <> url
   end
 
   defp process_response_body(body) do
