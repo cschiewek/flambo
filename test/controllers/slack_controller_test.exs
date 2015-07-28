@@ -24,12 +24,12 @@ defmodule Flambo.SlackControllerTest do
 
   test "POST / with help" do
     conn = post conn(), "/", @base_params ++ [text: "flambo help"]
-    assert response(conn, 200)
+    assert conn.resp_body =~ "Flambo v"
   end
 
   test "POST / with who are you" do
     conn = post conn(), "/", @base_params ++ [text: "flambo who are you"]
-    assert response(conn, 200)
+    assert conn.resp_body =~ "I'm Flambo! A humble slack bot, flambit, and denizen of the Fire Kingdom!"
   end
 
   test "POST / with tell" do
@@ -39,11 +39,11 @@ defmodule Flambo.SlackControllerTest do
 
   test "POST / with gif" do
     conn = post conn(), "/", @base_params ++ [text: "flambo gif princess bubblegum"]
-    assert response(conn, 200)
+    assert conn.resp_body =~ ~r/[http].*[.gif]/
   end
 
   test "POST / with image" do
     conn = post conn(), "/", @base_params ++ [text: "flambo image lady rainicorn"]
-    assert response(conn, 200)
+    assert conn.resp_body =~ ~r/[http].*[.gif|.jpg|.jpeg|.png]/
   end
 end
