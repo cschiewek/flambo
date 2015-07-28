@@ -3,6 +3,10 @@ defmodule Flambo.SlackController do
   @token Application.get_env(:flambo, Flambo.Endpoint)[:token]
   plug :action
 
+  def index(conn, _params) do
+    json conn, %{ flambo: %{ version: Flambo.Mixfile.project[:version] } }
+  end
+
   def command(conn, %{ "token" => token }) when token != @token do
     conn
     |> put_status(403)

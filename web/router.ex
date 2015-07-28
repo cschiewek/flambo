@@ -7,6 +7,7 @@ defmodule Flambo.Router do
 
   scope "/", Flambo do
     pipe_through :api
+    get "/", SlackController, :index
     post "/", SlackController, :command
   end
 end

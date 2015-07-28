@@ -7,8 +7,6 @@ defmodule Flambo.Commands.Help do
     %{ text:
       """
       ```
-      Flambo v#{Flambo.Mixfile.project[:version]}
-      -------------------------------------------
       fbo gif            display a random gif
       fbo help           prints this help message
       fbo hi             says hi

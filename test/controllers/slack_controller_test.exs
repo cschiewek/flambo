@@ -4,7 +4,7 @@ defmodule Flambo.SlackControllerTest do
 
   test "GET /" do
     conn = get conn(), "/"
-    assert response(conn, 404)
+    assert conn.resp_body =~ ~r/[flambo].*[version]/
   end
 
   test "POST / with invalid token" do
@@ -24,7 +24,7 @@ defmodule Flambo.SlackControllerTest do
 
   test "POST / with help" do
     conn = post conn(), "/", @base_params ++ [text: "flambo help"]
-    assert conn.resp_body =~ "Flambo v"
+    assert conn.resp_body =~ ~r/[text:].*[flambo]/
   end
 
   test "POST / with who are you" do
