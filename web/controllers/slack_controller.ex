@@ -3,13 +3,13 @@ defmodule Flambo.SlackController do
   @token Application.get_env(:flambo, Flambo.Endpoint)[:token]
   plug :action
 
-  def index(conn, %{ "token" => token }) when token != @token do
+  def command(conn, %{ "token" => token }) when token != @token do
     conn
     |> put_status(403)
     |> json %{ text: "" }
   end
 
-  def index(conn, params) do
+  def command(conn, params) do
     payload = params["text"] |> String.replace("#{params["trigger_word"]} ", "")
     [ function | arguments ] = Flambo.Commands.find(payload)
     json conn, function.(arguments, params["user_name"])
