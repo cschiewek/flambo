@@ -5,8 +5,9 @@
 Flambo is a super simple outgoing webhook slack bot, built with [Phoenix](http://phoenixframework.org).
 
 ## Getting up and running
-1. Install Erlang and Elixir
+1. Install Erlang, Elixir and nodejs
 2. Install dependencies with `mix deps.get`
+3. Generate your secret configs `mix flamb.secret` and add relevant keys
 3. Start Flambo with `mix phoenix.server`
 
 Now you can visit `localhost:4000` from your browser.
