@@ -31,5 +31,5 @@ defmodule Flambo.Endpoint do
     key: "_flambo_key",
     signing_salt: "mplg09zj"
 
-  plug :router, Flambo.Router
+  plug Flambo.Router
 end

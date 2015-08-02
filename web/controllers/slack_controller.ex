@@ -1,7 +1,6 @@
 defmodule Flambo.SlackController do
   use Flambo.Web, :controller
   @token Application.get_env(:flambo, Flambo.Endpoint)[:token]
-  plug :action
 
   def index(conn, _params) do
     json conn, %{ flambo: %{ version: Flambo.Mixfile.project[:version] } }
