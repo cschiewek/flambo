@@ -5,6 +5,6 @@ defmodule Flambo.Commands.Image do
 
   def image(message, _user) do
     terms = message |> List.first
-    %{ text: Imgur.random(terms) }
+    %{ text: Imgur.random(terms) |> List.first }
   end
 end

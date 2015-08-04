@@ -2,7 +2,7 @@ defmodule Imgur do
   use HTTPoison.Base
   @client_id Application.get_env(:flambo, Flambo.Endpoint)[:imgur_client_id]
 
-  def random(terms) do
+  def random(terms, count \\ 1) do
     results = search(terms)
     if Enum.empty? results do
       "Sorry, I couldn't find an image for `#{terms}`"
@@ -10,8 +10,8 @@ defmodule Imgur do
       results
       |> Enum.filter(fn(i) -> i["is_album"] == false end)
       |> Enum.shuffle
-      |> List.first
-      |> Map.get("link")
+      |> Enum.take(count)
+      |> Enum.map(fn(i) -> Map.get(i, "link") end)
     end
   end
 

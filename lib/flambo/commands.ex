@@ -5,7 +5,8 @@ defmodule Flambo.Commands do
       Flambo.Commands.Help.key,
       Flambo.Commands.Gif.key,
       Flambo.Commands.Tell.key,
-      Flambo.Commands.Image.key ]
+      Flambo.Commands.Image.key,
+      Flambo.Commands.Bomb.key ]
   end
 
   def find(payload) do
