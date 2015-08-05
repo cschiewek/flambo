@@ -6,7 +6,7 @@ use Mix.Config
 config :flambo, Flambo.Endpoint,
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   token: System.get_env("TOKEN"),
-  imgur_client_id: System.get_env("IMGUR_CLIEND_ID")
+  imgur_client_id: System.get_env("IMGUR_CLIENT_ID")
 
 # Configure your database
 config :flambo, Flambo.Repo,
