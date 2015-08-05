@@ -4,7 +4,7 @@ defmodule Flambo.Mixfile do
   def project do
     [app: :flambo,
      version: "0.2.0",
-     elixir: "~> 1.0",
+     elixir: "~> 1.0.5",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
      build_embedded: Mix.env == :prod,
@@ -35,7 +35,6 @@ defmodule Flambo.Mixfile do
      {:phoenix_html, "~> 1.4"},
      {:phoenix_live_reload, "~> 0.5", only: :dev},
      {:cowboy, "~> 1.0"},
-     {:httpoison, "~> 0.7.0"},
-     {:relisa, "~> 0.1.0"}]
+     {:httpoison, "~> 0.7.0"}]
   end
 end
