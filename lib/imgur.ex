@@ -9,6 +9,7 @@ defmodule Imgur do
     else
       results
       |> Enum.filter(fn(i) -> i["is_album"] == false end)
+      |> Enum.filter(fn(i) -> i["nsfw"] != true end)
       |> Enum.shuffle
       |> Enum.take(count)
       |> Enum.map(fn(i) -> Map.get(i, "link") end)
