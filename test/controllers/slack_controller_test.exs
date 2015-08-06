@@ -51,4 +51,9 @@ defmodule Flambo.SlackControllerTest do
     conn = post conn(), "/", @base_params ++ [text: "flambo bomb ball"]
     assert conn.resp_body =~ ~r/[http].*[.gif|.jpg|.jpeg|.png]/
   end
+
+  test "POST / with youtube" do
+    conn = post conn(), "/", @base_params ++ [text: "flambo youtube adventure time"]
+    assert conn.resp_body =~ ~r/[https:\/\/youtu.be\/].*/
+  end
 end
