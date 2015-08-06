@@ -5,7 +5,6 @@ defmodule Mix.Tasks.Flambo do
 
     def run(_args) do
       Mix.Tasks.Flambo.Secret.Local.run(_args)
-      Mix.Tasks.Flambo.Secret.Prod.run(_args)
     end
   end
 end

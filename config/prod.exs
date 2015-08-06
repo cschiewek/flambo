@@ -16,6 +16,7 @@ config :flambo, Flambo.Endpoint,
   cache_static_manifest: "priv/static/manifest.json",
   secret_key_base: System.get_env("SECRET_KEY_BASE"),
   token: System.get_env("TOKEN"),
+  giphy_key: "dc6zaTOxFJmzC",
   imgur_client_id: System.get_env("IMGUR_CLIENT_ID"),
   server: true
 
