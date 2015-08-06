@@ -14,7 +14,18 @@ use Mix.Config
 config :flambo, Flambo.Endpoint,
   http: [port: {:system, "PORT"}],
   cache_static_manifest: "priv/static/manifest.json",
+  secret_key_base: System.get_env("SECRET_KEY_BASE"),
+  token: System.get_env("TOKEN"),
+  imgur_client_id: System.get_env("IMGUR_CLIENT_ID"),
   server: true
+
+# Configure your database
+config :flambo, Flambo.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  username: "",
+  password: "",
+  database: "",
+  size: 20 # The amount of database connections in the pool
 
 # ## SSL Support
 #
@@ -45,7 +56,3 @@ config :logger, level: :info
 #
 #     config :flambo, Flambo.Endpoint, server: true
 #
-
-# Finally import the config/prod.secret.exs
-# which should be versioned separately.
-import_config "prod.secret.exs"
