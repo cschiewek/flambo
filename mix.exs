@@ -3,7 +3,7 @@ defmodule Flambo.Mixfile do
 
   def project do
     [app: :flambo,
-     version: "0.2.1",
+     version: "0.2.2",
      elixir: "~> 1.0.5",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
@@ -29,10 +29,10 @@ defmodule Flambo.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "~>  0.15.0"},
-     {:phoenix_ecto, "~> 0.8"},
+    [{:phoenix, "~>  0.16.0"},
+     {:phoenix_ecto, "~> 0.9"},
      {:postgrex, ">= 0.0.0"},
-     {:phoenix_html, "~> 1.4"},
+     {:phoenix_html, "~> 2.0"},
      {:phoenix_live_reload, "~> 0.5", only: :dev},
      {:cowboy, "~> 1.0"},
      {:httpoison, "~> 0.7.0"}]
