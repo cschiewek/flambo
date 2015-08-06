@@ -15,7 +15,9 @@ defmodule Flambo.Commands.Help do
       fbo image          shows a random image
       fbo show           shows a random image
       fbo tell           tell someone something
+      fbp watch          displays a youtube video
       fbo who are you?   tells you who he is
+      fbo youtube        displays a youtube video
       ```
       """
     }

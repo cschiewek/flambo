@@ -6,7 +6,8 @@ defmodule Flambo.Commands do
       Flambo.Commands.Gif.key,
       Flambo.Commands.Tell.key,
       Flambo.Commands.Image.key,
-      Flambo.Commands.Bomb.key ]
+      Flambo.Commands.Bomb.key,
+      Flambo.Commands.YouTube.key ]
   end
 
   def find(payload) do
