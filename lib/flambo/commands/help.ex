@@ -1,23 +1,23 @@
 defmodule Flambo.Commands.Help do
   def key do
-    [ ~r/^help/, &help/2 ]
+    [ ~r/^help/, &help/3 ]
   end
 
-  def help(_message, _user) do
+  def help(_message, _user, trigger) do
     %{ text:
       """
       ```
-      fbo animate        display a random gif
-      fbo bomb <n>       displays <n> random images (default for n is 3)
-      fbo gif            display a random gif
-      fbo help           prints this help message
-      fbo hi             says hi
-      fbo image          shows a random image
-      fbo show           shows a random image
-      fbo tell           tell someone something
-      fbp watch          displays a youtube video
-      fbo who are you?   tells you who he is
-      fbo youtube        displays a youtube video
+      #{trigger} animate        display a random gif
+      #{trigger} bomb <n>       displays <n> random images (default for n is 3)
+      #{trigger} gif            display a random gif
+      #{trigger} help           prints this help message
+      #{trigger} hi             says hi
+      #{trigger} image          shows a random image
+      #{trigger} show           shows a random image
+      #{trigger} tell           tell someone something
+      #{trigger} watch          displays a youtube video
+      #{trigger} who are you?   tells you who he is
+      #{trigger} youtube        displays a youtube video
       ```
       """
     }

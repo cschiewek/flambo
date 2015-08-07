@@ -3,7 +3,7 @@ defmodule Flambo.Mixfile do
 
   def project do
     [app: :flambo,
-     version: "0.3.0",
+     version: "0.3.1",
      elixir: "~> 1.0.5",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,

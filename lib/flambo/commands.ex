@@ -17,7 +17,7 @@ defmodule Flambo.Commands do
         |> Regex.match?(payload)
       end
     )
-    function = command && List.last(command) || &command_not_found/2
+    function = command && List.last(command) || &command_not_found/3
     params = if command do
       String.replace(payload, List.first(command) |> Regex.run(payload), "")
       |> String.strip
@@ -27,7 +27,7 @@ defmodule Flambo.Commands do
     [function, params]
   end
 
-  def command_not_found(_message, user) do
+  def command_not_found(_message, user, _trigger) do
     %{ text: "Sorry #{user}! I don't know how to do that." }
   end
 end

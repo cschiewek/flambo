@@ -1,9 +1,9 @@
 defmodule Flambo.Commands.WhoAreYou do
   def key do
-    [ ~r/^who are you/, &who_are_you/2 ]
+    [ ~r/^who are you/, &who_are_you/3 ]
   end
 
-  def who_are_you(_message, _user) do
+  def who_are_you(_message, _user, _trigger) do
     %{ text:
       """
       I'm Flambo! A humble slack bot, flambit, and denizen of the Fire Kingdom!

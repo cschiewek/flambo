@@ -1,9 +1,9 @@
 defmodule Flambo.Commands.Bomb do
   def key do
-    [ ~r/bomb/, &bomb/2 ]
+    [ ~r/bomb/, &bomb/3 ]
   end
 
-  def bomb(message, _user) do
+  def bomb(message, _user, _trigger) do
     message = message |> List.first
     match = Regex.run(~r/\d+/, message)
     if match do
