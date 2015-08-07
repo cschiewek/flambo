@@ -29,7 +29,7 @@ defmodule Flambo.Mixfile do
   #
   # Type `mix help deps` for examples and options
   defp deps do
-    [{:phoenix, "~>  0.16.0"},
+    [{:phoenix, "~>  0.16.1"},
      {:phoenix_ecto, "~> 0.9"},
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.0"},
