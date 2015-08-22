@@ -8,11 +8,11 @@ defmodule Imgur do
       "Sorry, I couldn't find an image for `#{terms}`"
     else
       results
-      |> Enum.filter(fn(i) -> i["is_album"] == false end)
-      |> Enum.filter(fn(i) -> i["nsfw"] != true end)
+      |> Enum.filter(&(&1["is_album"] == false))
+      |> Enum.filter(&(&1["nsfw"] != true))
       |> Enum.shuffle
       |> Enum.take(count)
-      |> Enum.map(fn(i) -> Map.get(i, "link") end)
+      |> Enum.map(&(Map.get(&1, "link")))
     end
   end
 
