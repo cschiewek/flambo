@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/cschiewek/flambo.png?label=ready&title=Ready)](https://waffle.io/cschiewek/flambo)
 # Flambo
 
 <img src="http://orig12.deviantart.net/bfcb/f/2013/162/f/b/flambo_by_darkhatboy-d68ln2x.png" height="200px" />
