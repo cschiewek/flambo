@@ -19,6 +19,7 @@ defmodule Flambo.Commands.Help do
       #{trigger} watch          displays a youtube video
       #{trigger} who are you?   tells you who he is
       #{trigger} youtube        displays a youtube video
+      #{trigger} wake up        wakes up
       ```
       """
     }
