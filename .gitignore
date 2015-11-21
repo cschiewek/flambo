@@ -24,3 +24,4 @@ erl_crash.dump
 
 # ignore releases
 /rel
+.DS_Store
