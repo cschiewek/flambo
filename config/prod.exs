@@ -28,4 +28,4 @@ config :flambo, Flambo.Repo,
 # Do not print debug messages in production
 config :logger, level: :info
 
-import_config "local.secret.exs"
+import_config "prod.secret.exs"
