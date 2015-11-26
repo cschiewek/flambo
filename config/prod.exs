@@ -14,11 +14,7 @@ use Mix.Config
 config :flambo, Flambo.Endpoint,
   http: [port: {:system, "PORT"}],
   cache_static_manifest: "priv/static/manifest.json",
-  secret_key_base: System.get_env("SECRET_KEY_BASE"),
-  token: System.get_env("TOKEN"),
   giphy_key: "dc6zaTOxFJmzC",
-  imgur_client_id: System.get_env("IMGUR_CLIENT_ID"),
-  google_api_key: System.get_env("GOOGLE_API_KEY"),
   server: true
 
 # Configure your database
@@ -31,3 +27,5 @@ config :flambo, Flambo.Repo,
 
 # Do not print debug messages in production
 config :logger, level: :info
+
+import_config "local.secret.exs"
