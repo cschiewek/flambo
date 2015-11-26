@@ -7,6 +7,7 @@ use Mix.Config
 
 # Configures the endpoint
 config :flambo, Flambo.Endpoint,
+  version: Flambo.Mixfile.project[:version],
   url: [host: "localhost"],
   root: Path.dirname(__DIR__),
   secret_key_base: "lgSslRwoeFpPVWNmrJWNvARP0xHluafPQZGtJ5v4VzH5EmYbxwNwiBtPhbMv4RmM",
