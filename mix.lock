@@ -11,7 +11,7 @@
   "hackney": {:hex, :hackney, "1.4.6"},
   "httpoison": {:hex, :httpoison, "0.8.0"},
   "idna": {:hex, :idna, "1.0.2"},
-  "mandrag": {:hex, :mandrag, "0.0.1"},
+  "mandrag": {:hex, :mandrag, "0.0.2"},
   "mimerl": {:hex, :mimerl, "1.0.0"},
   "phoenix": {:hex, :phoenix, "1.0.3"},
   "phoenix_ecto": {:hex, :phoenix_ecto, "1.2.0"},
