@@ -17,14 +17,6 @@ config :flambo, Flambo.Endpoint,
   giphy_key: "dc6zaTOxFJmzC",
   server: true
 
-# Configure your database
-config :flambo, Flambo.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "",
-  password: "",
-  database: "",
-  size: 20 # The amount of database connections in the pool
-
 # Do not print debug messages in production
 config :logger, level: :info
 

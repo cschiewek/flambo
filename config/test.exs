@@ -11,12 +11,3 @@ config :flambo, Flambo.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
-
-# Configure your database
-config :flambo, Flambo.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  pool: Ecto.Adapters.SQL.Sandbox,
-  username: System.get_env("DATABASE_POSTGRESQL_USERNAME") || "postgres",
-  password: System.get_env("DATABASE_POSTGRESQL_PASSWORD") || "postgres",
-  database: "flambo_test",
-  size: 1 # Use a single connection for transactional tests

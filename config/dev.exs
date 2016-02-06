@@ -26,12 +26,4 @@ config :flambo, Flambo.Endpoint,
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
-# Configure your database
-config :flambo, Flambo.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "flambo_dev",
-  size: 10 # The amount of database connections in the pool
-
 File.exists?("config/local.secret.exs") && import_config "local.secret.exs"

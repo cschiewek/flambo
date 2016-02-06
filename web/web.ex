@@ -17,19 +17,11 @@ defmodule Flambo.Web do
   """
 
   def model do
-    quote do
-      use Ecto.Model
-    end
   end
 
   def controller do
     quote do
       use Phoenix.Controller
-
-      # Alias the data repository and import query/model functions
-      alias Flambo.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
 
       # Import URL helpers from the router
       import Flambo.Router.Helpers
@@ -60,12 +52,6 @@ defmodule Flambo.Web do
   def channel do
     quote do
       use Phoenix.Channel
-
-      # Alias the data repository and import query/model functions
-      alias Flambo.Repo
-      import Ecto.Model
-      import Ecto.Query, only: [from: 2]
-
     end
   end
 
