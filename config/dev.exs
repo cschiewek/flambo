@@ -34,4 +34,4 @@ config :flambo, Flambo.Repo,
   database: "flambo_dev",
   size: 10 # The amount of database connections in the pool
 
-if File.exists?("config/local.secret.exs"), do: import_config "local.secret.exs"
+File.exists?("config/local.secret.exs") && import_config "local.secret.exs"
