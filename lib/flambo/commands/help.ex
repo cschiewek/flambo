@@ -7,6 +7,8 @@ defmodule Flambo.Commands.Help do
     %{ text:
       """
       ```
+      Flambo #{Application.get_env(:flambo, Flambo.Endpoint)[:version]}
+      =========================================================================
       #{trigger} animate        display a random gif
       #{trigger} bomb <n>       displays <n> random images (default for n is 3)
       #{trigger} gif            display a random gif
@@ -20,6 +22,8 @@ defmodule Flambo.Commands.Help do
       #{trigger} who are you?   tells you who he is
       #{trigger} youtube        displays a youtube video
       #{trigger} wake up        wakes up
+      ==========================================================================
+      Want more commands? Fork it! https://github.com/cschiewek/flambo
       ```
       """
     }
