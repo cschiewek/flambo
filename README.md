@@ -1,5 +1,5 @@
 # Flambo
-[![Build Status](https://semaphoreci.com/api/v1/cschiewek/flambo/branches/master/badge.svg)](https://semaphoreci.com/cschiewek/flambo)
+[![Build Status](https://semaphoreci.com/api/v1/cschiewek/flambo/branches/master/shields_badge.svg)](https://semaphoreci.com/cschiewek/flambo)
 
 <img src="http://orig12.deviantart.net/bfcb/f/2013/162/f/b/flambo_by_darkhatboy-d68ln2x.png" height="200px" />
 
