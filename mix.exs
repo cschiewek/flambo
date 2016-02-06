@@ -33,6 +33,6 @@ defmodule Flambo.Mixfile do
      {:phoenix_live_reload, "~> 1.0.3", only: :dev},
      {:cowboy, "~> 1.0.4"},
      {:httpoison, "~> 0.8.1"},
-     {:mandrag, "~> 0.0.19"}]
+     {:mandrag, "~> 0.0.20"}]
   end
 end
