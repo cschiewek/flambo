@@ -9,7 +9,7 @@ defmodule Flambo.SlackController do
   def command(conn, %{ "token" => token }) when token != @token do
     conn
     |> put_status(403)
-    |> json %{ text: "" }
+    |> json(%{text: ""})
   end
 
   def command(conn, params) do

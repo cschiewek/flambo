@@ -3,8 +3,8 @@ defmodule Mix.Tasks.Flambo do
     use Mix.Task
     @shortdoc "Generate required .secret.exs configs"
 
-    def run(_args) do
-      Mix.Tasks.Flambo.Secret.Local.run(_args)
+    def run(args) do
+      Mix.Tasks.Flambo.Secret.Local.run(args)
     end
   end
 end
