@@ -17,7 +17,7 @@ defmodule Flambo.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Flambo, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :httpoison, :exrm, :mandrag]]
+     applications: [:phoenix, :phoenix_html, :cowboy, :logger, :httpoison, :exrm, :mandrag, :exsentry]]
   end
 
   # Specifies which paths to compile per environment
@@ -33,6 +33,7 @@ defmodule Flambo.Mixfile do
      {:phoenix_live_reload, "~> 1.0.3", only: :dev},
      {:cowboy, "~> 1.0.4"},
      {:httpoison, "~> 0.8.1"},
-     {:mandrag, "~> 0.1.1"}]
+     {:mandrag, "~> 0.1.1"},
+     {:exsentry, "~> 0.2.1"}]
   end
 end

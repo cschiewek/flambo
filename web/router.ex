@@ -1,5 +1,6 @@
 defmodule Flambo.Router do
   use Flambo.Web, :router
+  use ExSentry.Plug
 
   pipeline :api do
     plug :accepts, ["json"]
