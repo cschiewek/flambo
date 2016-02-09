@@ -3,7 +3,7 @@ defmodule Flambo.Mixfile do
 
   def project do
     [app: :flambo,
-     version: "0.3.9",
+     version: "0.3.10",
      elixir: "~> 1.2",
      elixirc_paths: elixirc_paths(Mix.env),
      compilers: [:phoenix] ++ Mix.compilers,
@@ -33,6 +33,6 @@ defmodule Flambo.Mixfile do
      {:phoenix_live_reload, "~> 1.0.3", only: :dev},
      {:cowboy, "~> 1.0.4"},
      {:httpoison, "~> 0.8.1"},
-     {:mandrag, "~> 0.0.20"}]
+     {:mandrag, "~> 0.1.0"}]
   end
 end
