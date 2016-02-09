@@ -7,12 +7,12 @@ defmodule Flambo.Commands.Bomb do
     message = message |> List.first
     match = Regex.run(~r/\d+/, message)
     count = case match do
-      true -> match |> List.first |> Integer.parse |> elem(0)
-      false -> 3
+      nil -> 3
+      _ -> match |> List.first |> Integer.parse |> elem(0)
     end
     terms = case match do
-      true -> message |> String.replace(count, "") |> String.strip
-      false -> message
+      nil -> message
+      _ -> message |> String.replace(count, "") |> String.strip
     end
     %{ text: Imgur.random(terms, count) |> Enum.join("\n") }
   end
