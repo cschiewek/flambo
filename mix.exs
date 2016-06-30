@@ -14,8 +14,12 @@ defmodule Flambo.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
+    applications = case Mix.env do
+      :prod -> [:logger, :slack, :exsentry]
+      _ -> [:logger, :slack]
+    end
     [mod: {Flambo, []},
-     applications: [:logger, :slack]]
+     applications: applications]
   end
 
   # Dependencies can be Hex packages:
@@ -29,6 +33,8 @@ defmodule Flambo.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [{:slack, "~> 0.6.0"},
-     {:websocket_client, git: "https://github.com/jeremyong/websocket_client"}]
+     {:websocket_client, git: "https://github.com/jeremyong/websocket_client"},
+     {:edeliver, "~> 1.2.10"},
+     {:exsentry, "~> 0.6.2"}]
   end
 end

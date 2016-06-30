@@ -5,6 +5,7 @@ defmodule Flambo do
   # for more information on OTP Applications
   def start(_type, _args) do
     import Supervisor.Spec, warn: false
+    Logger.add_backend(ExSentry.LoggerBackend)
 
     children = [
       # Start the Slack app when the application starts

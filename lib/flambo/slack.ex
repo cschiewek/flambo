@@ -14,7 +14,7 @@ defmodule Flambo.Slack do
     {:ok, state}
   end
 
-  def handle_message(_message, _slack, state) do
+  def handle_message(message, _slack, state) do
     {:ok, state}
   end
 
