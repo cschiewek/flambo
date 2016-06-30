@@ -7,18 +7,21 @@ defmodule Flambo.Slack do
   end
 
   def handle_message(message = %{type: "message"}, slack, state) do
-    if String.starts_with?(message.text, slack.me.name) || String.match?(message.text, ~r/<@#{slack.me.id}>/) do
-      process_message(message.text, message.channel, slack)
+    case Map.fetch(message, :text) do
+      {:ok, text} -> String.match?(message.text, ~r/<@#{slack.me.id}>/) && process_message(message, slack)
+      _ -> nil
     end
     {:ok, state}
   end
 
-  def handle_message(message, _slack, state) do
-    IO.puts inspect(message)
+  def handle_message(_message, _slack, state) do
     {:ok, state}
   end
 
-  defp process_message(message, channel, slack) do
-    send_message("What?", channel, slack)
+  defp process_message(message, slack) do
+    payload = message.text |> String.replace(~r/<@#{slack.me.id}>/, "") |> String.trim
+    {function, arguments} = Flambo.Commands.find(payload)
+    response = function.(arguments, "<@#{message.user}>", slack.me.name)
+    send_message(response, message.channel, slack)
   end
 end
