@@ -4,7 +4,7 @@ defmodule Flambo.Mixfile do
   def project do
     [app: :flambo,
      version: "0.4.0",
-     elixir: "~> 1.3",
+     elixir: "~> 1.2",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
      deps: deps()]
