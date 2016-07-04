@@ -28,6 +28,6 @@ defmodule Flambo.Commands do
   end
 
   def command_not_found(_message, user, _trigger) do
-    %{ text: "Sorry #{user}! I don't know how to do that." }
+    "Sorry #{user}! I don't know how to do that."
   end
 end
