@@ -3,7 +3,7 @@
 
 <img src="http://orig12.deviantart.net/bfcb/f/2013/162/f/b/flambo_by_darkhatboy-d68ln2x.png" height="200px" />
 
-Flambo is a super simple outgoing webhook slack bot, built with [Phoenix](http://phoenixframework.org).
+Flambo is a super simple outgoing webhook slack bot, built with [Elixir-Slack](https://github.com/BlakeWilliams/Elixir-Slack).
 
 ## Getting up and running
 0. Configure your bot and get an API key

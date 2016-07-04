@@ -14,9 +14,10 @@ defmodule Flambo.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
+    default_applications = [:logger, :slack, :websocket_client]
     applications = case Mix.env do
-      :prod -> [:logger, :slack, :exsentry]
-      _ -> [:logger, :slack]
+      :prod -> default_applications ++ [:exsentry]
+      _ -> default_applications
     end
     [mod: {Flambo, []},
      applications: applications]
